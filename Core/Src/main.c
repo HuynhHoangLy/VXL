@@ -53,6 +53,46 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void clearNumberOnClock(int num) {
+	switch (num) {
+				case 0:
+					HAL_GPIO_WritePin(led_1_GPIO_Port, led_1_Pin, SET);
+					break;
+				case 1:
+					HAL_GPIO_WritePin(led_2_GPIO_Port, led_2_Pin, SET);
+					break;
+				case 2:
+					HAL_GPIO_WritePin(led_3_GPIO_Port, led_3_Pin, SET);
+					break;
+				case 3:
+					HAL_GPIO_WritePin(led_4_GPIO_Port, led_4_Pin, SET);
+					break;
+				case 4:
+					HAL_GPIO_WritePin(led_5_GPIO_Port, led_5_Pin, SET);
+					break;
+				case 5:
+					HAL_GPIO_WritePin(led_6_GPIO_Port, led_6_Pin, SET);
+					break;
+				case 6:
+					HAL_GPIO_WritePin(led_7_GPIO_Port, led_7_Pin, SET);
+					break;
+				case 7:
+					HAL_GPIO_WritePin(led_8_GPIO_Port, led_8_Pin, SET);
+					break;
+				case 8:
+					HAL_GPIO_WritePin(led_9_GPIO_Port, led_9_Pin, SET);
+					break;
+				case 9:
+					HAL_GPIO_WritePin(led_10_GPIO_Port, led_10_Pin, SET);
+					break;
+				case 10:
+					HAL_GPIO_WritePin(led_11_GPIO_Port, led_11_Pin, SET);
+					break;
+				case 11:
+					HAL_GPIO_WritePin(led_12_GPIO_Port, led_12_Pin, SET);
+					break;
+			}
+}
 void clearAllClock () {
 	HAL_GPIO_WritePin(led_1_GPIO_Port, led_1_Pin, SET);
 	HAL_GPIO_WritePin(led_2_GPIO_Port, led_2_Pin, SET);
