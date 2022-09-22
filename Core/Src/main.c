@@ -279,7 +279,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int count = 0;
+  int count_h = 1;
+  int count_m = 1;
+  int count_s = 1;
+  int isIntial = 0;
 //  int status = 0, status_op = 0;
 //  int count_red = 5, count_yellow = 2, count_green = 3;
 //  int count_red_op = 5, count_yellow_op = 2, count_green_op = 3;
@@ -357,10 +360,19 @@ int main(void)
 //	  	  		}
 //	  	  		break;
 //	  	  }
-	  if (count>=12) count = 0;
+	  if (count_s >= 12) count_s = 0;
+	  if (count_m >= 12) count_m = 0;
+	  if (count_h >= 12) count_h = 0;
 	  clearAllClock();
-	  setNumberOnClock(count++);
-	  HAL_Delay(1000);
+	  if (count_m == 1 && count_s == 1 && isIntial == 1) setNumberOnClock(count_h++);
+	  else {
+		  setNumberOnClock(count_h);
+		  isIntial = 1;
+	  }
+	  if (count_s == 0) setNumberOnClock(count_m++);
+	  else setNumberOnClock(count_m);
+	  setNumberOnClock(count_s++);
+	  HAL_Delay(500);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
